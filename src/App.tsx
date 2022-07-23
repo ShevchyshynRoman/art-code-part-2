@@ -5,10 +5,12 @@ import {
   getSelectDataStyles,
   getSelectDataTerms,
 } from './api/api';
-import { Select } from './components/Select';
+
+import { Select } from './components/Select/Select';
+import { ModalError } from './components/Modal/ModalError';
 
 export const App: React.FC = () => {
-  const { pathname } = window.location;
+  const [isModalActive, setIsModalActive] = useState(false);
 
   const [termsSelectData, setTermsSelectData] = useState([]);
   const [brandsTermsSelectData, setBrandsTermsSelectData] = useState([]);
@@ -25,7 +27,7 @@ export const App: React.FC = () => {
         setBrandsTermsSelectData(brandsTermsDataFromServer.data);
         setStylesSelectData(stylesDataFromServer.data);
       } catch {
-        alert('Cant load data from server...');
+        setIsModalActive(true);
       }
     }
 
@@ -34,9 +36,17 @@ export const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Select pathname={pathname} name="s" selectList={termsSelectData} />
-      <Select pathname={pathname} name="b" selectList={brandsTermsSelectData} />
-      <Select pathname={pathname} name="st" selectList={stylesSelectData} />
+      <Select prefix="s" selectList={termsSelectData} />
+      <Select prefix="b" selectList={brandsTermsSelectData} />
+      <Select prefix="st" selectList={stylesSelectData} />
+
+      {isModalActive && (
+        <ModalError
+          active={isModalActive}
+          setActive={setIsModalActive}
+          content="Cant load data from server..."
+        />
+      )}
     </div>
   );
 };
