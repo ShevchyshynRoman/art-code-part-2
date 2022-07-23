@@ -1,4 +1,4 @@
-# Front End Developer Code Challenge
+# Front End Developer Code Challenge part-2
 - [DEMO LINK](https://ShevchyshynRoman.github.io/art-code-part-2/)
 
 ## Description
