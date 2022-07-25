@@ -1,2 +1,2 @@
 .App{width:600px;margin-top:25px}.modal{height:100vh;width:100vw;background-color:rgba(0,0,0,.4);position:fixed;top:0;left:0;-webkit-justify-content:center;justify-content:center;opacity:0;pointer-events:none;transition:.5s}.modal,.modal__content{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center}.modal__content{-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:space-between;justify-content:space-between;padding:20px;border-radius:15px;background-color:#fff;height:200px;width:400px}.modal__button{width:100px;height:50px}.modal.active{opacity:1;pointer-events:all}
-/*# sourceMappingURL=main.73d8cd88.chunk.css.map */
+/*# sourceMappingURL=main.b7fb5a3c.chunk.css.map */
